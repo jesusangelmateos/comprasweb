@@ -8,7 +8,7 @@
 </head>
 
 <body>
-<h1>ALTA PRODUCTOS - Jesus Mateos</h1>
+<h1>ALTA PRODUCTOS - JESUS MATEOS</h1>
 <?php
 include "conexion.php";
 
