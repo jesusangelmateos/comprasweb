@@ -112,7 +112,7 @@ function insert($db, $idProducto, $nombreProducto, $precioProducto){
 		echo "Producto insertado correctamente<br>";
 	}
 	else {
-		echo "Error: ".$sql."<br>".mysqli_error($conn)."<br>";
+		echo "Error: ".$sql."<br>".mysqli_error($db)."<br>";
 	}
 }
 	
