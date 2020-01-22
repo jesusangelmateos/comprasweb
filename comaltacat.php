@@ -71,17 +71,15 @@ function errores ($error_level, $error_message, $error_file, $error_line, $error
 //trigger_error('El DNI '.$DNI.' ya existe previamente');	
 }
 function insert($db, $idCategoria, $nombreCategoria){
-    $sql = "INSERT INTO categoria (ID_CATEGORIA, NOMBRE) VALUES ('$idCategoria', '$nombreCategoria')";
+    $sql = "INSERT INTO CATEGORIA (ID_CATEGORIA, NOMBRE) VALUES ('$idCategoria', '$nombreCategoria')";
 	if(mysqli_query($db, $sql)){
 
 		echo "Categoria insertada correctamente<br>";
-	}
+    }
+    else {
+        echo "Error: ".$sql."<br>".mysqli_error($conn)."<br>";
+    }
 }
-
-	
-
-
-
 
 ?>
 
