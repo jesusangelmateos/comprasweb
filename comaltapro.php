@@ -73,7 +73,7 @@ if (!isset($_POST) || empty($_POST)) {
 function obtenerCategorias($db){
     $categorias = array();
 
-    $sql = "SELECT NOMBRE FROM categoria";
+    $sql = "SELECT NOMBRE FROM CATEGORIA";
 
     $resultado = mysqli_query($db, $sql);
     if ($resultado) {
@@ -106,10 +106,13 @@ function insert($db, $idProducto, $nombreProducto, $precioProducto){
 	$row=mysqli_fetch_assoc($resultado);
 	$codigo=$row['ID_CATEGORIA'];
 
-    $sql = "INSERT INTO producto (ID_PRODUCTO, NOMBRE, PRECIO, ID_CATEGORIA) VALUES ('$idProducto', '$nombreProducto', '$precioProducto', '$codigo')";
+    $sql = "INSERT INTO PRODUCTO (ID_PRODUCTO, NOMBRE, PRECIO, ID_CATEGORIA) VALUES ('$idProducto', '$nombreProducto', '$precioProducto', '$codigo')";
 	if(mysqli_query($db, $sql)){
 
-		echo "Categoria insertada correctamente<br>";
+		echo "Producto insertado correctamente<br>";
+	}
+	else {
+		echo "Error: ".$sql."<br>".mysqli_error($conn)."<br>";
 	}
 }
 	
