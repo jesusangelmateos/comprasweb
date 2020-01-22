@@ -101,7 +101,7 @@ function errores ($error_level, $error_message, $error_file, $error_line, $error
 }
 function insert($db, $idProducto, $nombreProducto, $precioProducto){
 
-    $select="SELECT ID_CATEGORIA from categoria where NOMBRE= '$nombreProducto'";
+    $select="SELECT ID_CATEGORIA from CATEGORIA where NOMBRE= '$nombreProducto'";
     $resultado=mysqli_query($db, $select);//el resultado no es valido, hay que tratarlo
 	$row=mysqli_fetch_assoc($resultado);
 	$codigo=$row['ID_CATEGORIA'];
