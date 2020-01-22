@@ -62,8 +62,9 @@ if (!isset($_POST) || empty($_POST)) {
     if($precioProducto==""){
 		trigger_error('El campo no puede estar vacio');	
     }
-    
-    insert($db, $idProducto, $nombreProducto, $precioProducto);
+	$nombreCategoria=$_REQUEST['categoria'];
+	
+    insert($db, $idProducto, $nombreProducto, $precioProducto, $nombreCategoria);
 	
 }
 ?>
@@ -99,9 +100,9 @@ function errores ($error_level, $error_message, $error_file, $error_line, $error
 //set_error_handler("errores"); // Establecemos la funcion que va a tratar los errores
 //trigger_error('El DNI '.$DNI.' ya existe previamente');	
 }
-function insert($db, $idProducto, $nombreProducto, $precioProducto){
+function insert($db, $idProducto, $nombreProducto, $precioProducto, $nombreCategoria){
 
-    $select="SELECT ID_CATEGORIA from CATEGORIA where NOMBRE= '$nombreProducto'";
+    $select="SELECT ID_CATEGORIA from CATEGORIA where NOMBRE= '$nombreCategoria'";
     $resultado=mysqli_query($db, $select);//el resultado no es valido, hay que tratarlo
 	$row=mysqli_fetch_assoc($resultado);
 	$codigo=$row['ID_CATEGORIA'];
