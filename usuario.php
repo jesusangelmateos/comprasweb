@@ -10,6 +10,7 @@
 <body>
 <h1>MENU DE USUARIO</h1>
 <?php
+session_start();
 include "conexion.php";
   
 ?>
@@ -22,7 +23,7 @@ include "conexion.php";
         Comprar Producto <input type="button" value="Comprar" onclick="window.location.href='comproUsuario.php'">
         </div></br>
         <div class="form-group">
-        Consultar Compra <input type="button" value="Consultar" onclick="window.location.href='comconscom.php'">
+        Consultar Compra <input type="button" value="Consultar" onclick="window.location.href='comconscomUsuario.php'">
         </div></br>
         <div class="form-group">
         Cerrar Sesion <input type="button" value="Salir" onclick="window.location.href='salir.php'">
